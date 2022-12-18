@@ -33,10 +33,20 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer = 0;//
 
         //pool fireballs
-        bullets[0].transform.position = firePoint.position;//set the pos of the bullet from
-        bullets[0].GetComponent<Projectile>().SetDirection(-Mathf.Sign(transform.localScale.x));//set the direction the bullets
+        bullets[FindBullet()].transform.position = firePoint.position;//set the pos of the bullet from
+        bullets[FindBullet()].GetComponent<Projectile>().SetDirection(-Mathf.Sign(transform.localScale.x));//set the direction the bullets
 
 
+    }
+    //bullet pooling
+    private int FindBullet()
+    {
+        for (int i = 0; i < bullets.Length; i++)
+        {
+            if(!bullets[i].activeInHierarchy)//if the ith bullet is not active, then yes you can use 
+                return i;
+        }
+        return 0;
     }
     
 }

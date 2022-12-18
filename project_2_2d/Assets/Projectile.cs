@@ -5,6 +5,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     private float direction;
     private bool hit;
+    private float lifetime; // avoid bullets flying forever
 
     private Animator anim;
     private BoxCollider2D boxCollider;
@@ -20,6 +21,11 @@ public class Projectile : MonoBehaviour
         if (hit) return;
         float movementSpeed = speed * Time.deltaTime * direction ;
         transform.Translate(movementSpeed, 0, 0);
+
+        //bellets life time
+        lifetime += Time.deltaTime;
+        if (lifetime > 5) gameObject.SetActive(false); // recycle bullets once it's been flying 
+                                                       //and not hitting anything for 5 seconds
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 
@@ -31,6 +37,7 @@ public class Projectile : MonoBehaviour
 
     public void SetDirection(float _direction)
     {
+        lifetime = 0; //reset it to zero 
         direction = _direction;
         gameObject.SetActive(true);
         hit = false;
