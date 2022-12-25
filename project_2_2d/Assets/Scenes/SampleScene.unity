@@ -662,6 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  cam: {fileID: 519420031}
 --- !u!212 &229877547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -721,9 +722,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229877545}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.27, y: -1.3500001, z: 0}
-  m_LocalScale: {x: 2.9999998, y: 3.0000002, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1234688001}
@@ -745,12 +746,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &229877550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -822,6 +823,7 @@ MonoBehaviour:
   - {fileID: 254296866}
   - {fileID: 50580027}
   - {fileID: 45736752}
+  cam: {fileID: 0}
 --- !u!1 &254296866
 GameObject:
   m_ObjectHideFlags: 0
