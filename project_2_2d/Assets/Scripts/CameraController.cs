@@ -5,9 +5,9 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     //room camera
-    [SerializeField] private float speed;
-    private float currentPosX;
-    private Vector3 velocity = Vector3.zero;
+    // [SerializeField] private float speed;
+    // private float currentPosX;
+    // private Vector3 velocity = Vector3.zero;
 
     //follow player
     [SerializeField] private Transform player;
