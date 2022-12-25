@@ -41,10 +41,10 @@ public class PlayerMovement : MonoBehaviour
         //*** -90<angle<90 means the mouse rest on the right of the player
         if (angle > -90 && angle < 90) //shot front face front (normal)
         {
-            Debug.Log("right");
+            //Debug.Log("right");
             body.rotation = angle;
         }else{ // shoot back face back
-            Debug.Log("left");
+            //Debug.Log("left");
             transform.localScale = new Vector3(-3,-3,3);
         }
 
