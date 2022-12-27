@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
 
+
     private void Awake() 
     {
         anim = GetComponent<Animator>();
@@ -33,6 +34,7 @@ public class Projectile : MonoBehaviour
         hit = true;
         boxCollider.enabled = false; 
         anim.SetTrigger("explode");
+
     }
 
     public void SetDirection(float _direction)

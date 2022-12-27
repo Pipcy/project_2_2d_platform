@@ -33,13 +33,18 @@ public class CameraController : MonoBehaviour
         so instead we use the sign user input "horizontalInput" to get a direction (negative = left, positive = right)
         */
         float horizontalInput = Input.GetAxis("Horizontal");
-        Debug.Log(horizontalInput);
-        if (horizontalInput >=0){
+        //Debug.Log(horizontalInput);
+        if (horizontalInput >=0.5){ //-0.5 to 0.5 is a threshold
             side = 1;
         }
-        else{
+        else if (horizontalInput <= -0.5){
             side = -1;
         }
+        else{
+            side = 0;
+        }
+        //Debug.Log(side+ " "+ horizontalInput);
+
         transform.position = new Vector3(player.position.x + lookAhead, player.position.y,
         transform.position.z); //follow player pos on the x and y axis
         lookAhead = Mathf.Lerp(lookAhead, (aheadDistance * side), Time.deltaTime * cameraSpeed); //note "side"
