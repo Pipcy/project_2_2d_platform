@@ -14,9 +14,10 @@ public class HealthCollectable : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("hitted");
+            //Debug.Log("hitted");
             collision.GetComponent<Health>().AddHealth(healthValue/2);//changed to add half heart if touched
             gameObject.SetActive(false); // deactivate heart so it wont add multiple health
         }
+
     }
 }
