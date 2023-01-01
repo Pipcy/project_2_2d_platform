@@ -27,11 +27,17 @@ public class Health : MonoBehaviour
         else
         {
             //player dead
+            
             if (!dead)
             {
-            anim.SetTrigger("die");
-            GetComponent<PlayerMovement>().enabled = false;
-            dead = true;
+                // foreach (Behaviour component in components)
+                //     component.enabled = false;
+
+                Debug.Log("die");
+                anim.SetBool("grounded", true);
+                anim.SetTrigger("die");
+                GetComponent<PlayerMovement>().enabled = false;
+                dead = true;
             }
             
         }
@@ -46,6 +52,22 @@ public class Health : MonoBehaviour
     //     if(Input.GetKeyDown(KeyCode.E))
     //         TakeDamage(1);
     // }
+
+    public void Respawn() //2.10
+    {
+        Debug.Log("respawned");
+        dead = false;
+        AddHealth(startingHealth);
+        
+        //anim.SetTrigger("die");
+        anim.Play("idle");
+        
+        GetComponent<PlayerMovement>().enabled = true;
+        // foreach (Behaviour component in components)
+        //     component.enabled = true;
+
+        
+    }
     
 }
 
