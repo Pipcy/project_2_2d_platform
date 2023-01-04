@@ -88,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //demage player when wrong color
-        playerColor = color.color;
+        playerColor = color.colorCode;
         
         if (grounded)
         {

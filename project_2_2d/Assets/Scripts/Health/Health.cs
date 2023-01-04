@@ -9,9 +9,16 @@ public class Health : MonoBehaviour
     private Animator anim;//7.3
     private bool dead;//7.3
 
+    //for changing color back to green after dead
+    public PlayerColor color;
+    SpriteRenderer sprite;
+
     private void Awake() {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+
+        color = GetComponent<PlayerColor>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public void TakeDamage(float _damage)
@@ -66,7 +73,8 @@ public class Health : MonoBehaviour
         // foreach (Behaviour component in components)
         //     component.enabled = true;
 
-        
+        color.colorCode = 6; // back to green when dead
+        sprite.color = new Color (0, 1, 0, 1); 
     }
     
 }

@@ -7,11 +7,16 @@ public class PlayerColor : MonoBehaviour
     //private color PlayerColor;
     SpriteRenderer sprite;
     [SerializeField] public float groundDamage;
-    public float color;
+    public Color color = new Color (0, 1, 0, 1); // starting color green
+    public float colorCode;
 
     void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
+        
+        //color starts out green
+        sprite.color = color;
+        colorCode = 6; //layer6
         
     }
     
@@ -21,24 +26,26 @@ public class PlayerColor : MonoBehaviour
         {            
             // Change the 'color' property of the 'Sprite Renderer'
             sprite.color = new Color (1, 0, 0, 1); 
-            color = 11; //layer11
+            colorCode = 11; //layer11
         }
         else if(Input.GetKeyDown(KeyCode.E))//Green
         {            
             sprite.color = new Color (0, 1, 0, 1); 
-            color = 6; //layer6
+            colorCode = 6; //layer6
         }
         else if(Input.GetKeyDown(KeyCode.Q))//Blue
         {            
             sprite.color = new Color (0, 0, 1, 1); 
-            color = 10; //layer10
+            colorCode = 10; //layer10
         }
 
         else if(Input.GetKeyDown(KeyCode.F))//purple
         {            
             sprite.color = new Color (145/255, 11/255, 145/255); 
-            color = 9; //layer9
+            colorCode = 9; //layer9
         }
+
+        
     } 
 
     // private void OnTriggerEnter2D(Collider2D collision)

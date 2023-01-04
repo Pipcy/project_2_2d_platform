@@ -19,6 +19,7 @@ public class PlayerRespawn : MonoBehaviour
         //Debug.Log("Respawned first");
         transform.position = currentCheckpoint.position; //move player to checkpoint position
         playerHealth.Respawn();//restore health and reset animation
+
         
         
     }
