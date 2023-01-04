@@ -7,7 +7,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private float speed;
     private Rigidbody2D body;
     private Animator anim;//**
+    private Health health;//
+
+    //colored lands and their damages
+    private PlayerColor color;
     private bool grounded;
+    private float groundColor;
+    private float playerColor = 6;
+    public float period = 0.0f;
+    
+    //
 
     //mouse aiming
     public Camera cam;
@@ -19,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         //grab references
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();//**
+        health = GetComponent<Health>();//
+        color = GetComponent<PlayerColor>();//
     }
 
     // Update is called once per frame
@@ -50,8 +61,10 @@ public class PlayerMovement : MonoBehaviour
 
         //jump
         if(Input.GetKey(KeyCode.Space) && grounded)
+        {    
+            //Debug.Log("JUMPED");
             Jump();
-
+        }
 
         //**set animator parameters
         anim.SetBool("run", horizontalInput != 0); 
@@ -63,6 +76,41 @@ public class PlayerMovement : MonoBehaviour
         //aiming at mouse position
         //covert from screen point to world point
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+
+        //demage test code
+        // if (Input.GetKeyDown(KeyCode.H)&& grounded)
+        // {
+        //     Debug.Log("damage");
+        //     
+        // }
+        
+
+
+        //demage player when wrong color
+        playerColor = color.color;
+        
+        if (grounded)
+        {
+            if (period > 0.4f) 
+            {   
+                //Debug.Log("Wrong Color");
+                
+                if (groundColor != playerColor)//when ground color not equal to player color
+                {
+                    health.TakeDamage(color.groundDamage);
+                    period = 0;
+                }    
+            }
+            period += UnityEngine.Time.deltaTime;
+        }
+
+
+        //If fall to the void
+        if (transform.position.y < -10f)
+        {
+            health.TakeDamage(health.startingHealth); //take all the health
+        }
     }
 
     //jump method **
@@ -77,6 +125,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
             grounded = true;
+            
+        groundColor = collision.gameObject.layer; // number 6(green), 9(purple), 10(blue), or 11(red)
+
+        //the initial demage to avoid the speedrunners from jumping around faster than 0.4 s to avoid color damage
+        if (groundColor != playerColor)
+        {
+            health.TakeDamage(color.groundDamage);
+        }
+        // if (collision.gameObject.layer != color)
+        //     
     }
 
     
@@ -84,4 +142,7 @@ public class PlayerMovement : MonoBehaviour
     {
         return true;
     }
+
+
+
 }

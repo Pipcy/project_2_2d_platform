@@ -10,6 +10,10 @@ TagManager:
   - heart
   - Bullet
   - Enemy
+  - Checkpoint
+  - Purple
+  - Blue
+  - Green
   layers:
   - Default
   - TransparentFX
@@ -17,12 +21,12 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - Green
   - Enemy
   - Player
-  - 
-  - 
-  - 
+  - Purple
+  - Blue
+  - Red
   - 
   - 
   - 
