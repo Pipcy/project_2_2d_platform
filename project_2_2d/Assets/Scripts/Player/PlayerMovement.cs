@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 0f;
         body.rotation = angle;
 
+        Debug.Log(transform.position);
+
         //*** -90<angle<90 means the mouse rest on the right of the player
         if (angle > -90 && angle < 90) //shot front face front (normal)
         {

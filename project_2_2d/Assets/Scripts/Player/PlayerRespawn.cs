@@ -17,7 +17,8 @@ public class PlayerRespawn : MonoBehaviour
     public void Respawn()
     {
         //Debug.Log("Respawned first");
-        transform.position = currentCheckpoint.position; //move player to checkpoint position
+        //move player to checkpoint position
+        transform.position = currentCheckpoint.position + new Vector3(0,3,0); // spawn above the checkpoint so it wont bug stuck in the ground collider box
         playerHealth.Respawn();//restore health and reset animation
 
         
