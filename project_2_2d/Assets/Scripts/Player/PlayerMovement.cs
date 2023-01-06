@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 0f;
         body.rotation = angle;
 
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
 
         //*** -90<angle<90 means the mouse rest on the right of the player
         if (angle > -90 && angle < 90) //shot front face front (normal)
@@ -113,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
         {
             health.TakeDamage(health.startingHealth); //take all the health
         }
+        
+        grounded = false;//***
     }
 
     //jump method **
@@ -123,21 +125,26 @@ public class PlayerMovement : MonoBehaviour
         grounded = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)//*** ...stay called once per frame and fixes the airjump issue
     {
         if (collision.gameObject.tag == "Ground")
             grounded = true;
-            
-        groundColor = collision.gameObject.layer; // number 6(green), 9(purple), 10(blue), or 11(red)
 
-        //the initial demage to avoid the speedrunners from jumping around faster than 0.4 s to avoid color damage
+        
+
+         
+    }
+    private void OnCollisionEnter2D(Collision2D collision) 
+    {
+        groundColor = collision.gameObject.layer; // number 6(green), 9(purple), 10(blue), or 11(red)
+         //the initial demage to avoid the speedrunners from jumping
+         // around faster than 0.4 s to avoid color damage
         if (groundColor != playerColor)
         {
             health.TakeDamage(color.groundDamage);
-        }
-        // if (collision.gameObject.layer != color)
-        //     
+        }  
     }
+
 
     
     public bool canAttack()
@@ -145,6 +152,5 @@ public class PlayerMovement : MonoBehaviour
         return true;
     }
 
-
-
+    
 }
