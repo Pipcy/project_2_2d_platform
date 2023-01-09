@@ -23,6 +23,10 @@ public class PlayerMovement : MonoBehaviour
     Vector2 mousePos;
     //
 
+    //audio
+    [Header("Audio")]
+    public AudioSource jump;
+
     void Start()
     {
         //grab references

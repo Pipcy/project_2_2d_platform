@@ -13,12 +13,20 @@ public class Health : MonoBehaviour
     public PlayerColor color;
     SpriteRenderer sprite;
 
+    //for sound effect
+    [Header("Audio")]
+    public AudioSource damageAudio;
+    public AudioSource dieAudio;
+
     private void Awake() {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
 
         color = GetComponent<PlayerColor>();
         sprite = GetComponent<SpriteRenderer>();
+
+        damageAudio = GetComponent<AudioSource>();
+        
     }
 
     public void TakeDamage(float _damage)
@@ -30,6 +38,9 @@ public class Health : MonoBehaviour
             //player hurt
             anim.SetTrigger("hurt");
             //iframe
+
+            //damage sound effect
+            damageAudio.Play();
         }
         else
         {
@@ -45,6 +56,7 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
+                dieAudio.Play();
             }
             
         }
