@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public GameObject completeLevelUI;
     public AudioSource winAudio;
 
+    
+
     void Awake()
     {
         winAudio = GetComponent<AudioSource>();
@@ -15,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         completeLevelUI.SetActive(true); //enable the winpage UI when win
         winAudio.Play();
+        
         //GetComponent<PlayerMovement>().enabled = false;
     }
 }

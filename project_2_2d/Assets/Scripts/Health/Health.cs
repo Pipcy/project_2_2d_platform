@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     [Header("Audio")]
     public AudioSource damageAudio;
     public AudioSource dieAudio;
+    public EndTrigger end;
 
     private void Awake() {
         currentHealth = startingHealth;
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         damageAudio = GetComponent<AudioSource>();
+        end = GetComponent<EndTrigger>();
         
     }
 
@@ -40,7 +42,16 @@ public class Health : MonoBehaviour
             //iframe
 
             //damage sound effect
-            damageAudio.Play();
+             //only play audio when the level is not yet complete 11.3.1
+            //Debug.Log(end.win);
+            if (end.win == false)
+            {
+                damageAudio.Play();
+            }
+            else
+            {
+                ;
+            }
         }
         else
         {
@@ -56,7 +67,14 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
+
+                if (end.win == false){
                 dieAudio.Play();
+                }
+                else
+                {
+                    ;
+                }
             }
             
         }
