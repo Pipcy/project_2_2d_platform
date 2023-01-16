@@ -27,13 +27,16 @@ public class EndTrigger : MonoBehaviour
             if (collision.gameObject.tag == "Player")   
             {   
                 SceneManager.LoadScene("CompleteScene");
+                
                 win = true;
                 gameManager.CompleteLevel();
                 coderuned = true;
+
                 
                 
             }
         }
+
     }
 
 
