@@ -11,7 +11,7 @@ public class EndTrigger : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(win);
+        //Debug.Log(win);
         if (coderuned)
         {
             win = true;

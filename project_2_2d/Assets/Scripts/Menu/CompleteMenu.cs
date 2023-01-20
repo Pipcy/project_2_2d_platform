@@ -11,6 +11,11 @@ public class CompleteMenu : MonoBehaviour
         SceneManager.LoadScene("Menu"); // load the next scene in the index
     }
 
+    public void BacktoLevels() // play button
+    {
+        SceneManager.LoadScene("Levels"); // load the next scene in the index
+    }
+
     public void QuitGame() //quit button
     {
         Debug.Log("QUIT!");

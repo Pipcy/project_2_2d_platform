@@ -268,9 +268,9 @@ Transform:
   m_Children:
   - {fileID: 961736473}
   - {fileID: 1471075898}
+  - {fileID: 589379141}
   - {fileID: 810831749}
   - {fileID: 214904478}
-  - {fileID: 589379141}
   m_Father: {fileID: 1597388428}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -582,11 +582,11 @@ RectTransform:
   m_Children:
   - {fileID: 189048660}
   m_Father: {fileID: 149589359}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192, y: -83}
+  m_AnchoredPosition: {x: 219, y: -83}
   m_SizeDelta: {x: 271.0949, y: 47.9782}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589379142
@@ -716,7 +716,7 @@ RectTransform:
   m_Children:
   - {fileID: 910553338}
   m_Father: {fileID: 149589359}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -997,7 +997,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1802,7 +1802,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"A supposedly 4-hand Game"'
+  m_text: '"A supposedly 4-handed Game"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 838480af1960e4e39878f26f8035a0f6, type: 2}
   m_sharedMaterial: {fileID: -1121442796416318779, guid: 838480af1960e4e39878f26f8035a0f6, type: 2}
@@ -2337,7 +2337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8904450318480913712, guid: 83166f51c5c1b466a9e728a5dbdb75aa, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8904450318480913712, guid: 83166f51c5c1b466a9e728a5dbdb75aa, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2393,11 +2393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8904450318480913712, guid: 83166f51c5c1b466a9e728a5dbdb75aa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 190
+      value: 224
       objectReference: {fileID: 0}
     - target: {fileID: 8904450318480913712, guid: 83166f51c5c1b466a9e728a5dbdb75aa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -181
+      value: -183
       objectReference: {fileID: 0}
     - target: {fileID: 8904450318480913712, guid: 83166f51c5c1b466a9e728a5dbdb75aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2427,5 +2427,9 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -1121442796416318779, guid: 838480af1960e4e39878f26f8035a0f6, type: 2}
+    - target: {fileID: 8904450319748582171, guid: 83166f51c5c1b466a9e728a5dbdb75aa, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83166f51c5c1b466a9e728a5dbdb75aa, type: 3}

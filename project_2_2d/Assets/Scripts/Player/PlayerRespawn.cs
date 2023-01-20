@@ -9,9 +9,11 @@ public class PlayerRespawn : MonoBehaviour
     private Transform currentCheckpoint; //store pos of latest checkpoint
     private Health playerHealth; //restore health when respawn
     
+ 
 
     private void Awake() {
         playerHealth = GetComponent<Health>();
+
     }
 
     public void Respawn()
@@ -31,7 +33,7 @@ public class PlayerRespawn : MonoBehaviour
         if(collision.transform.tag == "Checkpoint")
         {
             Debug.Log("checkpoint detected");
-
+            
             currentCheckpoint = collision.transform;
             //SoundManager.instance.PlaySound(checkpointSound);
             collision.GetComponent<Collider2D>().enabled = false;
@@ -40,6 +42,7 @@ public class PlayerRespawn : MonoBehaviour
         }
 
     }
+
     // private void Update() {
     //     Debug.Log("respawnComplete: " + respawnComplete);
     // }
