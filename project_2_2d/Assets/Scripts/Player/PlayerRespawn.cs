@@ -8,6 +8,7 @@ public class PlayerRespawn : MonoBehaviour
     //[SerializeField] private AudioClip checkpointSound; //audio when touch checkpoint
     private Transform currentCheckpoint; //store pos of latest checkpoint
     private Health playerHealth; //restore health when respawn
+    public bool respawnCheck = false;
     
  
 
@@ -22,7 +23,7 @@ public class PlayerRespawn : MonoBehaviour
         //move player to checkpoint position
         transform.position = currentCheckpoint.position + new Vector3(0,3,0); // spawn above the checkpoint so it wont bug stuck in the ground collider box
         playerHealth.Respawn();//restore health and reset animation
-
+        respawnCheck = true;
         
         
     }

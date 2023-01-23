@@ -10,6 +10,27 @@ public class enemy_sideways : MonoBehaviour
 
     private bool killed = false;
 
+    // //detect respawn
+    // public PlayerRespawn respawn;
+
+    // void Awake()
+    // {
+    //     respawn = GetComponent<PlayerRespawn>();
+
+        
+    // }
+
+    // void Update()
+    // {
+    //     if (respawn.respawnCheck == true)
+    //     {   
+    //         EnemyRespawn();
+    //     }
+    // }
+
+
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -28,4 +49,14 @@ public class enemy_sideways : MonoBehaviour
             }
         }
     }
+
+    // private void EnemyRespawn()
+    // {
+    //     if (killed)
+    //     {
+    //         gameObject.GetComponent<SpriteRenderer>().enabled = true;//*
+    //         killed = false;
+    //         respawn.respawnCheck = false;
+    //     }
+    // }
 }

@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  respawn: {fileID: 2034842618905346605, guid: d2bc269daac4d4a7fa9268eac8c71b13, type: 3}
 --- !u!114 &5689423434172743460
 MonoBehaviour:
   m_ObjectHideFlags: 0
